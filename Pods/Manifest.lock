@@ -1,0 +1,16 @@
+PODS:
+  - OpinionzAlertView (0.3.1)
+
+DEPENDENCIES:
+  - OpinionzAlertView
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - OpinionzAlertView
+
+SPEC CHECKSUMS:
+  OpinionzAlertView: 213cf7fa544091962ebd9526ff2e7e120b13c149
+
+PODFILE CHECKSUM: 6101a535ad19db12de6c23e1c0d5a2d459adf575
+
+COCOAPODS: 1.11.2
