@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		218958F52921DF9E009F087F /* UserDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 218958F32921DF9E009F087F /* UserDataModel.xcdatamodeld */; };
+		218958FE2921E2B6009F087F /* GrxUserDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 218958FD2921E2B6009F087F /* GrxUserDataManager.m */; };
+		218959032921E859009F087F /* UserDataInfo+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 218959012921E859009F087F /* UserDataInfo+CoreDataClass.m */; };
+		218959042921E859009F087F /* UserDataInfo+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 218959022921E859009F087F /* UserDataInfo+CoreDataProperties.m */; };
 		21DD1F6128DD961600613515 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DD1F6028DD961600613515 /* AppDelegate.m */; };
 		21DD1F6A28DD961600613515 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21DD1F6828DD961600613515 /* Main.storyboard */; };
 		21DD1F6C28DD961800613515 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21DD1F6B28DD961800613515 /* Assets.xcassets */; };
@@ -19,6 +23,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		218958F42921DF9E009F087F /* UserDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserDataModel.xcdatamodel; sourceTree = "<group>"; };
+		218958FC2921E2B6009F087F /* GrxUserDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GrxUserDataManager.h; sourceTree = "<group>"; };
+		218958FD2921E2B6009F087F /* GrxUserDataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GrxUserDataManager.m; sourceTree = "<group>"; };
+		218958FF2921E859009F087F /* UserDataInfo+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UserDataInfo+CoreDataProperties.h"; sourceTree = "<group>"; };
+		218959002921E859009F087F /* UserDataInfo+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UserDataInfo+CoreDataClass.h"; sourceTree = "<group>"; };
+		218959012921E859009F087F /* UserDataInfo+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UserDataInfo+CoreDataClass.m"; sourceTree = "<group>"; };
+		218959022921E859009F087F /* UserDataInfo+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UserDataInfo+CoreDataProperties.m"; sourceTree = "<group>"; };
 		21DD1F5C28DD961600613515 /* UserDataStatistics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UserDataStatistics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21DD1F5F28DD961600613515 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		21DD1F6028DD961600613515 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -50,6 +61,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		218958F22921DF7B009F087F /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				218958FF2921E859009F087F /* UserDataInfo+CoreDataProperties.h */,
+				218959002921E859009F087F /* UserDataInfo+CoreDataClass.h */,
+				218959012921E859009F087F /* UserDataInfo+CoreDataClass.m */,
+				218959022921E859009F087F /* UserDataInfo+CoreDataProperties.m */,
+				218958FC2921E2B6009F087F /* GrxUserDataManager.h */,
+				218958FD2921E2B6009F087F /* GrxUserDataManager.m */,
+				218958F32921DF9E009F087F /* UserDataModel.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		21DD1F5328DD961600613515 = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +96,7 @@
 		21DD1F5E28DD961600613515 /* UserDataStatistics */ = {
 			isa = PBXGroup;
 			children = (
+				218958F22921DF7B009F087F /* CoreData */,
 				21DD1F7828DD963700613515 /* DataStatisticsManager */,
 				21DD1F5F28DD961600613515 /* AppDelegate.h */,
 				21DD1F6028DD961600613515 /* AppDelegate.m */,
@@ -227,6 +253,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				218959032921E859009F087F /* UserDataInfo+CoreDataClass.m in Sources */,
+				218959042921E859009F087F /* UserDataInfo+CoreDataProperties.m in Sources */,
+				218958FE2921E2B6009F087F /* GrxUserDataManager.m in Sources */,
+				218958F52921DF9E009F087F /* UserDataModel.xcdatamodeld in Sources */,
 				21DD1F7E28DD967200613515 /* KeyChainStore.m in Sources */,
 				21DD1F8228DDA78600613515 /* RootViewController.m in Sources */,
 				21DD1F6128DD961600613515 /* AppDelegate.m in Sources */,
@@ -447,6 +477,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		218958F32921DF9E009F087F /* UserDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				218958F42921DF9E009F087F /* UserDataModel.xcdatamodel */,
+			);
+			currentVersion = 218958F42921DF9E009F087F /* UserDataModel.xcdatamodel */;
+			path = UserDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 21DD1F5428DD961600613515 /* Project object */;
 }

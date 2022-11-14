@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21512" systemVersion="22A400" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="UserDataInfo" representedClassName="UserDataInfo" syncable="YES">
+        <attribute name="appActivateCount" optional="YES" attributeType="String"/>
+        <attribute name="appContinuousUseDays" optional="YES" attributeType="String"/>
+        <attribute name="appLastEnterDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="appLastExitDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="appUseDays" optional="YES" attributeType="String"/>
+        <attribute name="appUseTime" optional="YES" attributeType="String"/>
+        <attribute name="userId" optional="YES" attributeType="String"/>
+    </entity>
+</model>

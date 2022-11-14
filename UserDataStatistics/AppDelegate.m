@@ -6,7 +6,9 @@
 //
 
 #import "AppDelegate.h"
-#import "RootViewController.h""
+#import "RootViewController.h"
+#import <MagicalRecord/MagicalRecord.h>
+
 @interface AppDelegate ()
 
 @end
@@ -21,6 +23,11 @@
     [self.window makeKeyAndVisible];
     RootViewController *rootVC = [[RootViewController alloc]init];
     self.window.rootViewController = rootVC;
+    /*! 数据库 */
+    [MagicalRecord setupCoreDataStackWithStoreNamed:@"GrxData.sqlite"];
+    NSString* docs=[NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES)lastObject];
+    /*! 数据库地址 */
+    NSLog(@"数据库地址======%@",docs);
     return YES;
 }
 

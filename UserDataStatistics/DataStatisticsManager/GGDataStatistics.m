@@ -17,20 +17,10 @@ static NSString * const GGAppActivateCount         = @"GGAppActivateCount";
 static NSString * const GGAppLastEnterDate         = @"GGAppLastEnterDate";
 static NSString * const GGAppLastExitDate          = @"GGAppLastExitDate";
 
-@interface GGDataStatistics ()
-
-@property (nonatomic, assign) NSInteger         appUseDays;             // 使用app的天数
-@property (nonatomic, assign) NSInteger         appContinuousUseDays;   // 连续使用app的天数
-@property (nonatomic, assign) NSInteger         appUseTime;             // app的使用时间，单位秒
-@property (nonatomic, assign) NSInteger         appActivateCount;       // app打开的次数
-
-@property (nonatomic, strong) NSDate            *appLastEnterDate;      // 上次打开app的时间
-@property (nonatomic, strong) NSDate            *appLastExitDate;       // 上次退出app的时间
-
-@property (nonatomic, strong) NSDate            *appEnterDate;          // 本次app打开的时间
-@property (nonatomic, strong) NSDate            *appExitDate;           // 本次app退出的时间
-@property (nonatomic, strong) NSString    *userId;    //用户ID
-
+@interface GGDataStatistics (){
+    NSDate *appEnterDate;          // 本次app打开的时间
+    NSDate *appExitDate;           // 本次app退出的时间
+}
 @end
 
 @implementation GGDataStatistics
@@ -96,15 +86,15 @@ static NSString * const GGAppLastExitDate          = @"GGAppLastExitDate";
 #pragma mark - observer callback
 - (void)onAppEnterForeground
 {
-    self.appEnterDate = [NSDate date]; // 本次打开app的时间
+    appEnterDate = [NSDate date]; // 本次打开app的时间
     NSTimeInterval timeOnce = 0;
-    if ([self.appEnterDate earlierDate:self.appLastExitDate] == self.appLastExitDate) {
-        timeOnce = [self.appEnterDate timeIntervalSinceDate:self.appLastExitDate];
+    if ([appEnterDate earlierDate:self.appLastExitDate] == self.appLastExitDate) {
+        timeOnce = [appEnterDate timeIntervalSinceDate:self.appLastExitDate];
     } else {
-        self.appLastExitDate = self.appEnterDate;
+        self.appLastExitDate = appEnterDate;
     }
     self.appActivateCount++;// 使用次数+1
-    NSInteger days = [self daysFromDate:self.appLastExitDate toDate:self.appEnterDate];
+    NSInteger days = [self daysFromDate:self.appLastExitDate toDate:appEnterDate];
     if (days >= 1) { // 如果不是同一日期，则表示是不同的天数
         self.appUseDays++;
         if (days > 1) {
@@ -120,12 +110,12 @@ static NSString * const GGAppLastExitDate          = @"GGAppLastExitDate";
 
 - (void)onAppEnterBackground
 {
-    self.appExitDate = [NSDate date];
-    if ([self.appExitDate earlierDate:self.appEnterDate] == self.appEnterDate) {
-        self.appUseTime += [self.appExitDate timeIntervalSinceDate:self.appEnterDate];
+    appExitDate = [NSDate date];
+    if ([appExitDate earlierDate:appEnterDate] == appEnterDate) {
+        self.appUseTime += [appExitDate timeIntervalSinceDate:appEnterDate];
     }
-    self.appLastEnterDate = self.appEnterDate;
-    self.appLastExitDate = self.appExitDate;
+    self.appLastEnterDate = appEnterDate;
+    self.appLastExitDate = appExitDate;
     NSLog(@"22222====%ld",(long)self.appUseTime);
     [KeyChainStore save:[NSString stringWithFormat:@"%@_%@",GGAppUseTime,self.userId] data:[NSString stringWithFormat:@"%ld",(long)self.appUseTime]];
     self.appUseTime = [[KeyChainStore load:[NSString stringWithFormat:@"%@_%@",GGAppUseTime,self.userId]] integerValue];

@@ -1,16 +1,22 @@
 PODS:
+  - MagicalRecord (2.3.2):
+    - MagicalRecord/Core (= 2.3.2)
+  - MagicalRecord/Core (2.3.2)
   - OpinionzAlertView (0.3.1)
 
 DEPENDENCIES:
+  - MagicalRecord
   - OpinionzAlertView
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - MagicalRecord
     - OpinionzAlertView
 
 SPEC CHECKSUMS:
+  MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
   OpinionzAlertView: 213cf7fa544091962ebd9526ff2e7e120b13c149
 
-PODFILE CHECKSUM: 6101a535ad19db12de6c23e1c0d5a2d459adf575
+PODFILE CHECKSUM: df538efa6db177ecca9935e27d56803f59a66e45
 
 COCOAPODS: 1.11.2

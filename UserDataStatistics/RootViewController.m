@@ -7,6 +7,7 @@
 
 #import "RootViewController.h"
 #import "GGDataStatistics.h"
+#import "GrxUserDataManager.h"
 #import <OpinionzAlertView/OpinionzAlertView.h>
 @interface RootViewController ()
 
@@ -16,8 +17,12 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    GGDataStatistics *data = [GGDataStatistics sharedInstance:@"Grx"];
-    NSString *content = [NSString stringWithFormat:@"\n使用天数\nappUseDays=%zi\n连续使用天数\nappContinuousUseDays=%zi\n使用总时长\nappUseTime=%zi\n启动次数\nappActivateCount=%zi", data.appUseDays, data.appContinuousUseDays, data.appUseTime, data.appActivateCount];
+//    GGDataStatistics *data = [GGDataStatistics sharedInstance:@"Grx"];
+//    NSString *content = [NSString stringWithFormat:@"\n使用天数\nappUseDays=%zi\n连续使用天数\nappContinuousUseDays=%zi\n使用总时长\nappUseTime=%zi\n启动次数\nappActivateCount=%zi\n上次使用时间:lasttime=%zi", data.appUseDays, data.appContinuousUseDays, data.appUseTime, data.appActivateCount,data.appLastUseTime];
+//    NSLog(@"%@",content);
+//    [self showAlert:content];
+    GrxUserDataManager *data = [GrxUserDataManager sharedInstance:@"Grx"];
+    NSString *content = [NSString stringWithFormat:@"\n使用天数\nappUseDays=%zi\n连续使用天数\nappContinuousUseDays=%zi\n使用总时长\nappUseTime=%zi\n启动次数\nappActivateCount=%zi\n上次使用时间:lasttime=%zi", data.appUseDays, data.appContinuousUseDays, data.appUseTime, data.appActivateCount,data.appLastUseTime];
     NSLog(@"%@",content);
     [self showAlert:content];
 }
